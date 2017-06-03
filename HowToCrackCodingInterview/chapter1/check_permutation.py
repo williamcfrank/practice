@@ -28,8 +28,14 @@ def check_permutation(s1, s2):
         smaller = s1
     print(bigger)
     print(smaller)
+    for c in bigger:
+        if c not in bigger:
+            return False
+        bigger.remove(c)
+    return True
+
 
 if __name__ ==  "__main__":
     test_s1 = "helllllo"
     test_s2 = "lohe"
-    check_permutation(test_s1, test_s2)
+    print("Should be True:  " + str(check_permutation(test_s1, test_s2)))
